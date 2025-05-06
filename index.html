@@ -3,12 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Trading Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <h1>Welcome to My Website</h1>
-  <p>This is a simple static site deployed on free hosting.</p>
-  <script src="script.js"></script>
+<body class="font-roboto bg-gray-100">
+  <nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between">
+      <h1 class="text-xl font-bold">Trading Dashboard</h1>
+      <button onclick="showLoginModal()" class="px-4 py-2 bg-white text-blue-600 rounded">Login</button>
+    </div>
+  </nav>
+  <div class="container mx-auto p-4">
+    <h1 class="text-3xl font-bold text-center">Welcome to My Trading Dashboard</h1>
+    <p class="text-center mt-4">Manage trades with Finvasia Shoonya and Flattrade.</p>
+  </div>
+  <div id="loginModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Login</h2>
+      <input type="text" placeholder="Username" class="w-full p-2 mb-4 border rounded">
+      <input type="password" placeholder="Password" class="w-full p-2 mb-4 border rounded">
+      <button onclick="hideLoginModal()" class="px-4 py-2 bg-blue-600 text-white rounded">Submit</button>
+    </div>
+  </div>
+  <script>
+    function showLoginModal() { document.getElementById('loginModal').classList.remove('hidden'); }
+    function hideLoginModal() { document.getElementById('loginModal').classList.add('hidden'); }
+    console.log("Website loaded successfully!");
+  </script>
 </body>
 </html>
